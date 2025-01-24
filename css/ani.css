@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Ownglyph_ParkDaHyun';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_ParkDaHyun.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SejongGeulggot';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-2@1.0/SejongGeulggot.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {margin: 0; padding: 0;}
+li {list-style: none;}
+a {text-decoration: none; color: #333;}
+table {border-collapse: collapse;}
+caption {font-size: 0; color: transparent; text-indent: -9999px; position: absolute; left: -9999px; height: 0; overflow: hidden;}w
+
+html, body {height: 100%; 
+    font-family: 'SejongGeulggot';}
+
+.wrap {} /* 여러 번 쓸수 있고, 조합 가능. 내용들에 사용. */
+#wrap {} /* 한페이지에 한 번 쓸수 있는 이름. 큰 레이아웃에 사용. */
+
+#wrap {background: url(../images/bg1920.png); width: 100%; height: 2200px; /* height: 100%; */ background-size: cover;}
+
+/* 100%해도 높이가 없어서 <html> <body> 에 높이를 줘야 이미지 나옴.
+vh 브라우져 높이% . vh 쓰면 괜찮음.
+vw 브라우져 폭% */
+
+header {width: 80%; height: 80px; border-radius: 50px; background: rgb(255, 255, 255, 0.5); position: absolute; left: 50%; top: 50px; transform: translateX(-50%); display: flex;  justify-content: space-around; align-items: center; backdrop-filter: blur(5px); opacity: 0.6; transition: 0.2s; z-index: 10;}
+header:hover {opacity: 1;}
+
+header h1 {width: 200px;  color: skyblue; font-size: 16px;}
+header audio {width: 60px; transition: 1s;}
+header:hover audio {width: 200px; transition: 1s;}
+header nav {width: 800px;}
+header nav .gnb {display: flex;}
+header nav .gnb li {width: 20%; flex-grow: 1; font-size: 18px; text-align: center; border-right: 1px solid #aaa;}
+header nav .gnb li:last-child {border: 0;}
+header nav .gnb li a {display: block;}
+
+.textbox {position: absolute; right: 10%; top: 50%; transform: translateY(-50%); font-size: 50px; color: #fff; display: flex; gap: 18px; z-index: 10; /* flex-direction: row-reverse; */}
+.textbox ul {transform-style: preserve-3d; perspective: 800px;}
+.textbox ul li {height: 60px; animation:merong 3s forwards; opacity: 0; position: relative;}
+.textbox ul li.ma {margin-bottom: 30px;}
+
+@keyframes merong {
+    0% {opacity: 0; left: -100px; top: 100px; transform: rotate(20deg) rotate(90deg);}
+    100% {opacity: 1; left: 0; top: 0; transform: rotate(0) rotate(0deg);}
+}
+
+.textbox ul:nth-child(1) li:nth-child(1) {animation-delay: 0s;}
+.textbox ul:nth-child(1) li:nth-child(2) {animation-delay: 0.1s;}
+.textbox ul:nth-child(1) li:nth-child(3) {animation-delay: 0.2s;}
+.textbox ul:nth-child(1) li:nth-child(4) {animation-delay: 0.3s;}
+.textbox ul:nth-child(1) li:nth-child(5) {animation-delay: 0.4s;}
+.textbox ul:nth-child(1) li:nth-child(6) {animation-delay: 0.5s;}
+.textbox ul:nth-child(1) li:nth-child(7) {animation-delay: 0.6s;}
+.textbox ul:nth-child(1) li:nth-child(8) {animation-delay: 0.7s;}
+.textbox ul:nth-child(1) li:nth-child(9) {animation-delay: 0.8s;}
+.textbox ul:nth-child(1) li:nth-child(10) {animation-delay: 0.9s;}
+
+.textbox ul:nth-child(2) li:nth-child(1) {animation-delay: 0.4s;}
+.textbox ul:nth-child(2) li:nth-child(2) {animation-delay: 0.5s;}
+.textbox ul:nth-child(2) li:nth-child(3) {animation-delay: 0.6s;}
+.textbox ul:nth-child(2) li:nth-child(4) {animation-delay: 0.7s;}
+.textbox ul:nth-child(2) li:nth-child(5) {animation-delay: 0.8s;}
+.textbox ul:nth-child(2) li:nth-child(6) {animation-delay: 0.9s;}
+.textbox ul:nth-child(2) li:nth-child(7) {animation-delay: 1s;}
+.textbox ul:nth-child(2) li:nth-child(8) {animation-delay: 1.1s;}
+.textbox ul:nth-child(2) li:nth-child(9) {animation-delay: 1.2s;}
+
+.textbox ul:nth-child(3) li:nth-child(1) {animation-delay: 0.6s;}
+.textbox ul:nth-child(3) li:nth-child(2) {animation-delay: 0.7s;}
+.textbox ul:nth-child(3) li:nth-child(3) {animation-delay: 0.8s;}
+.textbox ul:nth-child(3) li:nth-child(4) {animation-delay: 0.9s;}
+.textbox ul:nth-child(3) li:nth-child(5) {animation-delay: 1s;}
+
+
+.snow_box {position: absolute; width: 100%; height: 100%; ; left: 0; top: 0; }
+.snow_box .snow {background:url('../images/dandelion1.png'); position: absolute; width: 100%; height: 100%; ; left: 0; top: 0;}
+.snow_box .snow:nth-child(1) {animation: snow1 5s infinite linear; }
+@keyframes snow1 {
+    0% {background-position: 0 0;}
+    100% {background-position: 800px 1000px;}
+}
+
+.snow_box .snow:nth-child(2) {animation: snow2 2s infinite linear; background-size: 60%;}
+@keyframes snow2 {
+    0% {background-position: 0 0;}
+    100% {background-position: 300px 500px;}
+}
+
+.snow_box .snow:nth-child(3) {animation: snow3 3s infinite linear; background-size: 30%;}
+@keyframes snow3 {
+    0% {background-position: 0 0;}
+    100% {background-position: 100px 300px;}
+}
